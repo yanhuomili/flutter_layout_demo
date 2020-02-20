@@ -4,17 +4,17 @@ class BottomNavigationBarPage2 extends StatefulWidget {
   BottomNavigationBarPage2({Key key}) : super(key: key);
 
   @override
-  _BottomNavigationBarPageState2 createState() => _BottomNavigationBarPageState2();
+  _BottomNavigationBarPage2State createState() => _BottomNavigationBarPage2State();
 }
 
-class _BottomNavigationBarPageState2 extends State<BottomNavigationBarPage2> {
+class _BottomNavigationBarPage2State extends State<BottomNavigationBarPage2> {
 
   int currentIndex = 0;
   List<Widget> _pageList = List()
   ..add(_HomePage())
   ..add(_NotePage());
 
-  PageController _pageController;
+  PageController _pageController = new PageController();
 
   
 
@@ -23,7 +23,7 @@ class _BottomNavigationBarPageState2 extends State<BottomNavigationBarPage2> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'bottom_navigation_bar 演示',
+          'bottom_navigation_bar2 演示',
           style: TextStyle(
             fontSize: 16.0
           ),
@@ -55,13 +55,17 @@ class _BottomNavigationBarPageState2 extends State<BottomNavigationBarPage2> {
               )
             ]
           )
-
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: (index){
           print('底部tab切换$index');
           setState(() {
+            _pageController.animateToPage(
+              index,
+              duration: Duration(milliseconds:300), // 过渡时间
+              curve: Curves.easeIn // 过渡曲线
+            );
             currentIndex = index;
           });
         },
@@ -79,12 +83,28 @@ class _BottomNavigationBarPageState2 extends State<BottomNavigationBarPage2> {
         ],
         
       ),
-      body: PageView(
-        children: _pageList,
+      /* 直接使用 */
+      // body: PageView(
+      //   children: _pageList,
+      //   onPageChanged: (index){
+      //     print('$index');
+      //   },
+      //   controller: _pageController,
+      // ),
+
+      /* 使用build方法*/
+      body: PageView.builder(
+        itemCount: _pageList.length,
         onPageChanged: (index){
-          print('$index');
+          print('页面切换$index');
+          setState(() {
+            currentIndex = index;
+          });
         },
         controller: _pageController,
+        itemBuilder: (BuildContext context, int index){
+          return _pageList[index];
+        },
       ),
     );
   }
@@ -97,8 +117,12 @@ class _HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Center(
-        child: Text('_home页面'),
+      padding: EdgeInsets.only(top: 60),
+      child: Column(
+        children: <Widget>[
+          Text('_home页面'),
+          Text('使用pageView 与 bottomNavigationBar结合实现底部切换'),
+        ],
       ),
     );
   }
