@@ -25,6 +25,10 @@ class _TabBarViewPageState extends State<TabBarViewPage> with SingleTickerProvid
         bottom: TabBar(
           controller: _tabController,
           isScrollable: true,
+          indicatorColor: Colors.purple, // 指示器颜色
+          indicatorWeight: 2.0, // 指示器高度
+          labelColor: Colors.yellowAccent, // 选中label颜色
+          unselectedLabelColor: Colors.white, // 未选中label颜色
           tabs: <Widget>[
             Tab(
               text: 'Tab1',
@@ -32,23 +36,23 @@ class _TabBarViewPageState extends State<TabBarViewPage> with SingleTickerProvid
             ),
             Tab(
               text: 'Tab2',
-              icon: Icon(Icons.airplanemode_active),
+              // icon: Icon(Icons.airplanemode_active),
             ),
             Tab(
               text: 'Tab3',
-              icon: Icon(Icons.add_to_home_screen),
+              // icon: Icon(Icons.add_to_home_screen),
             ),
             Tab(
               text: 'Tab4',
-              icon: Icon(Icons.add_comment),
+              // icon: Icon(Icons.add_comment),
             ),
             Tab(
               text: 'Tab5',
-              icon: Icon(Icons.add_comment),
+              // icon: Icon(Icons.add_comment),
             ),
             Tab(
               text: 'Tab6',
-              icon: Icon(Icons.add_comment),
+              // icon: Icon(Icons.add_comment),
             ),
             Tab(
               text: 'Tab7',
@@ -56,15 +60,15 @@ class _TabBarViewPageState extends State<TabBarViewPage> with SingleTickerProvid
             ),
             Tab(
               text: 'Tab8',
-              icon: Icon(Icons.airplanemode_active),
+              // icon: Icon(Icons.airplanemode_active),
             ),
             Tab(
               text: 'Tab9',
-              icon: Icon(Icons.add_to_home_screen),
+              // icon: Icon(Icons.add_to_home_screen),
             ),
             Tab(
               text: 'Tab10',
-              icon: Icon(Icons.add_comment),
+              // icon: Icon(Icons.add_comment),
             ),
           ],
         ),
