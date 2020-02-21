@@ -4,6 +4,7 @@ import 'package:layout_demo01/pages/bottom_navigation_bar2.dart';
 import 'package:layout_demo01/pages/tab_bar_view.dart';
 import 'package:layout_demo01/pages/verticle_tab_view.dart';
 import 'package:layout_demo01/pages/keep_alive.dart';
+import 'package:layout_demo01/pages/keep_alive2.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -62,7 +63,14 @@ class _HomePageState extends State<HomePage> {
                 print('路由跳转');
               },
             ),
-            
+            ListTile(
+              title: Text('keepAlive2'),
+              leading: Icon(Icons.ac_unit),
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => KeepAlivePage2()));
+                print('路由跳转');
+              },
+            ),
 
           ],
         ),  
