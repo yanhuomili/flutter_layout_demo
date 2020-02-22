@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:layout_demo01/pages/bottom_navigation_bar.dart';
 import 'package:layout_demo01/pages/bottom_navigation_bar2.dart';
 import 'package:layout_demo01/pages/router_change.dart';
+import 'package:layout_demo01/pages/search.dart';
 import 'package:layout_demo01/pages/tab_bar_view.dart';
 import 'package:layout_demo01/pages/verticle_tab_view.dart';
 import 'package:layout_demo01/pages/keep_alive.dart';
@@ -24,6 +25,7 @@ class _HomePageState extends State<HomePage> {
     {'title':'keepAlive','route':KeepAlivePage()},
     {'title':'keepAlive2','route':KeepAlivePage2()},
     {'title':'RouterChange','route':RouterChagePage()},
+    {'title':'search','route':SearchPage()},
   ];
 
   @override
