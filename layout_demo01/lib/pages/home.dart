@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:layout_demo01/pages/bottom_navigation_bar.dart';
 import 'package:layout_demo01/pages/bottom_navigation_bar2.dart';
+import 'package:layout_demo01/pages/easy_refresh.dart';
 import 'package:layout_demo01/pages/expansion_list.dart';
 import 'package:layout_demo01/pages/expansion_panel_list.dart';
 import 'package:layout_demo01/pages/grid_view.dart';
@@ -33,8 +34,9 @@ class _HomePageState extends State<HomePage> {
     {'title':'expansionTile','route':ExpansionTilePage()},
     {'title':'expansionPanel','route':ExpansionPanelPage()},
     {'title':'scroll_view','route':GridViewPage()},
-    {'title':'toolTip','route':ToolTipPage()},
-  ];
+    {'title':'toolTip','route':ToolTipPage()},    
+    {'title':'easyRefresh','route':EasyResreshPage()}
+  ];  
 
   @override
   Widget build(BuildContext context) {
