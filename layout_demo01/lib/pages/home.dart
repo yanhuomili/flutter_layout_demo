@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:layout_demo01/pages/bottom_navigation_bar.dart';
 import 'package:layout_demo01/pages/bottom_navigation_bar2.dart';
+import 'package:layout_demo01/pages/dart_basic_grammar.dart';
 import 'package:layout_demo01/pages/easy_refresh.dart';
 import 'package:layout_demo01/pages/expansion_list.dart';
 import 'package:layout_demo01/pages/expansion_panel_list.dart';
@@ -35,9 +36,16 @@ class _HomePageState extends State<HomePage> {
     {'title':'expansionPanel','route':ExpansionPanelPage()},
     {'title':'scroll_view','route':GridViewPage()},
     {'title':'toolTip','route':ToolTipPage()},    
-    {'title':'easyRefresh','route':EasyResreshPage()}
+    {'title':'easyRefresh','route':EasyResreshPage()},
+    {'title':'dartBasicGrammar','route':DartBasicGrammarPage()}
   ];  
 
+  @override
+  void initState() {
+    super.initState();
+
+  }
+    
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,9 +64,12 @@ class _HomePageState extends State<HomePage> {
                 print('路由跳转');
               },
             );
-         },
+          },
         ), 
       ),
     );
   }
+
+
 }
+    
